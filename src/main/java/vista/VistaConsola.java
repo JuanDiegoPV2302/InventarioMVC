@@ -17,7 +17,7 @@ public class VistaConsola {
     private Scanner sc = new Scanner(System.in);
 
     public int mostrarMenu() {
-        System.out.println("\n1) Agregar  2) Vender  3) Listar  4) Valor total  0) Salir");
+        System.out.println("\n1) Agregar  2) Vender  3) Listar  4) Valor total  5) Exportar a CSV  0) Salir");
         System.out.print("Opcion: ");
         try {
             return Integer.parseInt(sc.nextLine());

@@ -6,6 +6,7 @@ package controlador;
 
 import modelo.Inventario;
 import modelo.StockInsuficienteException;
+import vista.VistaCSV;
 import vista.VistaConsola;
 
 /**
@@ -16,10 +17,12 @@ public class ControladorInventario {
 
     private Inventario inventario;
     private VistaConsola vista;
+    private VistaCSV vistaCSV;
 
     public ControladorInventario(Inventario inventario, VistaConsola vista) {
         this.inventario = inventario;
         this.vista = vista;
+        this.vistaCSV = new VistaCSV();
     }
 
     public void iniciar() {
@@ -35,6 +38,8 @@ public class ControladorInventario {
             } else if (op == 4) {
                 double total = inventario.obtenerValorTotal();
                 vista.mostrarMensaje("Valor del inventario: $" + total);
+            } else if (op == 5) {
+                vistaCSV.exportarInventario(inventario.obtenerProductos(), "inventario.csv");
             }
         } while (op != 0);
     }
