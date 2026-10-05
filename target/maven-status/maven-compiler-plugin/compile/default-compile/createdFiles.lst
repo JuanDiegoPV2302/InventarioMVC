@@ -1,6 +1,0 @@
-App.class
-vista/VistaConsola.class
-controlador/ControladorInventario.class
-modelo/StockInsuficienteException.class
-modelo/Inventario.class
-modelo/Producto.class
